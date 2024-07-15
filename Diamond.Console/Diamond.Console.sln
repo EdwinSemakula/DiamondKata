@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diamond.Console", "Diamond.Console.csproj", "{AC37E4A0-2936-4B4B-8101-072ED3F5E157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamond.Common", "..\Diamond.Common\Diamond.Common.csproj", "{B2B972C6-8587-4809-AD5B-C2BA2ACB88AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC37E4A0-2936-4B4B-8101-072ED3F5E157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC37E4A0-2936-4B4B-8101-072ED3F5E157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC37E4A0-2936-4B4B-8101-072ED3F5E157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC37E4A0-2936-4B4B-8101-072ED3F5E157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2B972C6-8587-4809-AD5B-C2BA2ACB88AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B972C6-8587-4809-AD5B-C2BA2ACB88AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B972C6-8587-4809-AD5B-C2BA2ACB88AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B972C6-8587-4809-AD5B-C2BA2ACB88AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F76C823-F6EC-4814-8B48-0A42DDD1F49B}
+	EndGlobalSection
+EndGlobal
