@@ -1,43 +1,38 @@
 ﻿using Diamond.Services;
 using Diamond.Services.Interfaces;
 using Diamond.Services.Validators;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Diamond.Console
 {
     public class Program
     {
-        private static IDiamondCreationService _diamondService;
-        private static IDiamondRequestValidation _diamondRequestValidation;
-        public Program(IDiamondCreationService diamondCreationService,
-            IDiamondRequestValidation diamondRequestValidation)
-        {
-            _diamondService = diamondCreationService;
-            _diamondRequestValidation = diamondRequestValidation;
-        }
-
         public static void Main(string[] args)
         {
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IDiamondCreationService, DiamondCreationService>()
+                .AddSingleton<IDiamondRequestValidation, DiamondRequestValidation>()
+                .BuildServiceProvider();
 
-            var diamondCreationService = new DiamondCreationService();
-            var diamondRequestValidation = new DiamondRequestValidation();
-            var program = new Program(diamondCreationService, diamondRequestValidation);
+            
+            var diamondRequestValidationService = serviceProvider.GetService<IDiamondRequestValidation>();
+            var diamondCreationService = serviceProvider.GetService<IDiamondCreationService>();
 
-            string stringInput;
-
+            string userInput;
             do
             {
                 System.Console.WriteLine("Please enter a letter of the alphabet:");
-                stringInput = System.Console.ReadLine() ?? "";
-            } while (!_diamondRequestValidation.ValidateInput(stringInput));
+                userInput = System.Console.ReadLine() ?? "";
+            } while (!diamondRequestValidationService.ValidateInput(userInput));
 
-            if (_diamondRequestValidation.ValidateInput(stringInput))
+            if (diamondRequestValidationService.ValidateInput(userInput))
             {
-                var input = stringInput.ToUpper()[0];
-                var diamond = _diamondService.CreateDiamond(input);
+                var validInput = userInput.ToUpper()[0];
+                var diamond = diamondCreationService.CreateDiamond(validInput);
 
-                foreach (var letter in diamond)
+                foreach (var character in diamond)
                 {
-                    System.Console.WriteLine(letter);
+                    System.Console.WriteLine(character);
                 }
             }
         }
