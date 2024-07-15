@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Diamond.Services.Interfaces\Diamond.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Diamond.Services\Diamond.Services.csproj" />
+  </ItemGroup>
+
 </Project>
